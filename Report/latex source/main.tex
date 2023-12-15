@@ -1,0 +1,127 @@
+\documentclass[a4paper, 13pt]{article}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage{titlesec}
+\usepackage{imakeidx}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{vntex}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usepackage{cases}
+\usepackage{fancybox}
+\usepackage{dsfont}
+\usepackage{subfigure}
+\usepackage{xcolor}
+\usepackage{piton}
+\usepackage{tcolorbox}
+\usepackage{animate}
+\usepackage{movie15}
+\usepackage{transparent}
+\usepackage[normalem]{ulem}
+
+\counterwithin{figure}{section}
+\setcounter{tocdepth}{4}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \\
+TRƯỜNG ĐẠI HỌC BÁCH KHOA \\
+KHOA KHOA HỌC VÀ KĨ THUẬT MÁY TÍNH
+\end{center}
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=3cm]{images/logo-BK.png}
+\end{center}
+\end{figure}
+
+\vspace{1cm}
+
+
+\begin{center}
+\begin{tabular}{c}
+\multicolumn{1}{l}{\textbf{{\Large Đồ án thiết kế luận lý (CO3091)}}}\\
+~~\\
+\hline
+\\
+\multicolumn{1}{l}{\textbf{{\Large Đề tài}}}\\
+\\
+\textbf{{\Huge Mô phỏng xe tự hành}}\\
+\\
+\\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+
+\begin{table}[h]
+\begin{tabular}{rrl}
+\hspace{4 cm} & \textbf{Advisor(s):} & Trần Thanh Bình\\
+
+& \textbf{Class:} &L02\\
+& \textbf{Group:} &\\
+& \textbf{Student(s):} &Nguyễn Viết An -  2112741\\
+& & Bùi Đức Anh - 2112751\\
+& & Lê Minh Chiến - 2112933\\
+\end{tabular}
+\end{table}
+
+\begin{center}
+{\footnotesize Thành phố Hồ Chí Minh, 12/2023}
+\end{center}
+\end{titlepage}
+
+
+\newpage
+\begin{center}
+\textbf{\large LỜI CẢM ƠN}
+\end{center}
+Lời đầu tiên, em không biết nói gì hơn ngoài bày tỏ sự biết ơn sâu sắc đến các thầy cô. Trong suốt chặng đường học tập và làm đồ án tốt nghiệp em đã luôn nhận được sự hướng dẫn, giúp đỡ tận tình của thầy cô.\\
+Đặc biệt, chúng em xin bày tỏ sự kính trọng và lòng biết ơn sâu sắc nhất đến thầy \textbf{Trần Thanh Bình} giáo viên hướng dẫn . Thầy là người đã trực tiếp hướng dẫn, giúp đỡ cho em để em có thể hoàn thành đồ án này. Trong quá trình học tập và nghiên cứu, nếu em có những sai sót gì, kính mong thầy cô bỏ qua cho em!\\Chúng em xin kính chúc các thầy cô luôn luôn khỏe mạnh và ngày một thành công hơn trên con đường giảng dạy của mình.\\Chúng em xin trân trọng cảm ơn.\\
+\vspace{1cm}
+\begin{flushright}
+\textit{ TPHCM, ngày ... tháng ... năm 2022}\\
+\textbf{Sinh viên thực hiện}
+\medskip
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{\large TÓM TẮT ĐỒ ÁN}
+\end{center}
+Đề tài tập trung nghiên cứu các giải pháp phần mềm nhằm hỗ trợ hệ thống điều hướng tự động cho robot di chuyển trong môi trường mô phỏng Gazebo. Cụ thể, đề tài đề xuất xây dựng mô hình mô phỏng môi trường hoạt động của robot, bao gồm các đối tượng như đường xá, vật cản, dấu hiệu giao thông, etc. Trên cơ sở đó, đề tài nghiên cứu thiết kế cấu trúc và các bộ điều khiển cho robot di chuyển trong môi trường mô phỏng.\\ Các thuật toán xử lý hình ảnh, giao thông và lập lộ trình sẽ được phát triển nhằm giúp robot xác định vị trí, định hướng và tự động điều khiển di chuyển một cách an toàn, tránh va chạm đến đích đặt ra. Kết quả nghiên cứu của đề tài góp phần phát triển công nghệ robot tự hành thông minh trong tương lai.
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\include{chapter/Intro/ROS}
+\include{chapter/1-term}
+\include{chapter/2a-sign}
+\include{chapter/2c-sign}
+\include{chapter/3-lane}
+\end{document}
